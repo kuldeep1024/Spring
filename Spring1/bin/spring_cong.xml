@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<bean id="student" class="com.sp.test.mamager.StudentDetailsImpl"></bean>
+
+	<!-- fro test2  -->
+	<bean id="activeMqMessaging" class="com.sp.test2.comm.ActiveMQMessaging" />
+	<bean id="communication" class="com.sp.test2.sender.Communication">
+ 		<constructor-arg>
+			<ref bean="activeMqMessaging" />
+		</constructor-arg> 
+		<property name="activeMQ">
+			<ref bean="activeMqMessaging" />
+		</property>
+	</bean>
+
+</beans>
