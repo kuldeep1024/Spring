@@ -7,10 +7,13 @@ import com.sp.test2.sender.Communication;
 public class MainTest {
 
 	public static void main(String[] args) {
+		@SuppressWarnings("resource")
 		ApplicationContext context= new ClassPathXmlApplicationContext("spring_cong.xml");
-		StudentDetails std=context.getBean("student",StudentDetails.class);
-		System.out.println(std.getStudent());
 		
+		
+		StudentDetails std=context.getBean("student",StudentDetails.class);
+		
+		System.out.println(std.getStudent());
 		System.out.println(std.studentList());
 		
 		

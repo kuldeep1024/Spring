@@ -5,15 +5,17 @@
 
 	<bean id="student" class="com.sp.test.mamager.StudentDetailsImpl"></bean>
 
-	<!-- fro test2  -->
-	<bean id="activeMqMessaging" class="com.sp.test2.comm.ActiveMQMessaging" />
+	<!-- for test2  -->
+	<bean id="active" class="com.sp.test2.comm.ActiveMQMessaging" />
+	<bean id="sms" class="com.sp.test2.comm.SMSMQMessaging" />
+	
 	<bean id="communication" class="com.sp.test2.sender.Communication">
  		<constructor-arg>
-			<ref bean="activeMqMessaging" />
+			<ref bean="sms" />
 		</constructor-arg> 
-		<property name="activeMQ">
-			<ref bean="activeMqMessaging" />
-		</property>
+		<!-- <property name="activeMQ">
+			<ref bean="active" />
+		</property> -->
 	</bean>
 
 </beans>

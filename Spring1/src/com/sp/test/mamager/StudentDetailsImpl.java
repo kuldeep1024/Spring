@@ -21,14 +21,17 @@ public class StudentDetailsImpl implements StudentDetails {
 	@Override
 	public List<Student> studentList() {
 		List<Student> list= new ArrayList<Student>();
+		
 		Student s2= new Student(2, "Ram", "Noida 125", "898989");
 		s2.setHomeAddress(new Address());
+		
 		Student s3= new Student(3, "Shyam", "Noida 120", "565656");
+		
 		Student s4= new Student(4, "Mohan", "Noida 121", "34344");
 		
-		
-		
-		list.add(s2);list.add(s3);list.add(s4);
+		list.add(s2);
+		list.add(s3);
+		list.add(s4);
 		
 		return list;
 	}
